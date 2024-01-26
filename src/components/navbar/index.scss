@@ -1,0 +1,63 @@
+.navbar_container{
+ 
+    height: 40px;
+    background: #2B2D3C;
+    color: #f1f1f3;
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 15px;
+    border-bottom: 1px solid gray;
+    .logo {
+        margin: auto 0px;
+    }
+
+    .account_info{
+        border: 1px solid gray;
+        margin: 5px;
+        padding: 5px 10px ;
+        cursor: pointer;
+        background: transparent;
+        border-radius: 5px;
+       p{
+        margin: 3px;
+       }
+    }
+
+  
+}
+
+.account_popover{
+
+    border-radius: 5px;
+    box-shadow: 1px 1px 5px 1px  gray;
+    background-color: white;
+    margin: 20px;
+    
+    .account_popover_div{
+        height: 150px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        
+       div{
+        border-bottom: 1px solid gray;
+        padding: 10px 20px;
+        button{
+            background: rgb(247, 247, 249);
+            color: #2B2D3C;
+            border-radius: 5px;
+            padding: 5px;
+            border: 1px solid rgb(234, 235, 239);
+            cursor: pointer;
+        }
+       }
+       p{
+        padding: 5px 20px;
+       }
+       
+    }
+}
+
+.popover_triger{
+
+}

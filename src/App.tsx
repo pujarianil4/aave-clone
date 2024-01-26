@@ -1,20 +1,22 @@
-import { useState } from "react";
 import "./App.css";
 import Home from "@/components/dashboard";
 import "@rainbow-me/rainbowkit/styles.css";
 
 import { getDefaultWallets, RainbowKitProvider } from "@rainbow-me/rainbowkit";
 import { configureChains, createConfig, WagmiConfig } from "wagmi";
-import { mainnet, polygon, optimism, arbitrum, base, zora } from "wagmi/chains";
+import { polygon } from "wagmi/chains";
 import { alchemyProvider } from "wagmi/providers/alchemy";
 import { publicProvider } from "wagmi/providers/public";
+const apiKey = import.meta.env.VITE_ALCHEMY_API;
+
 
 function App() {
   const { chains, publicClient } = configureChains(
-    [mainnet, polygon, optimism, arbitrum, base, zora],
-    [publicProvider()]
+    [polygon],
+    [publicProvider(), alchemyProvider({apiKey: apiKey})]
   );
-
+   console.log("api", apiKey);
+   
   const { connectors } = getDefaultWallets({
     appName: "My RainbowKit App",
     projectId: "YOUR_PROJECT_ID",
